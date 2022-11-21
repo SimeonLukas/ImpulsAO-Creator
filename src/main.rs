@@ -1,6 +1,5 @@
 extern crate json_value_merge;
 use image::imageops::*;
-use image::io::Reader as ImageReader;
 use image::GenericImageView;
 use image_compressor::Factor;
 use image_compressor::FolderCompressor;
@@ -8,9 +7,7 @@ use json_value_merge::Merge;
 use serde::Serialize;
 use serde_json::Value;
 use std::fs;
-use std::fs::File;
 use std::io;
-use std::io::prelude::*;
 use std::path::Path;
 use std::path::PathBuf;
 use std::sync::mpsc;
@@ -69,8 +66,10 @@ fn converter() {
     let mut answer = String::new();
     let mut vec = Vec::new();
     let mut vecextra = Vec::new();
-    println!("In welchem Ordner liegen die Impulse?
-Format: JJJJMMDD.jpg --> 01. Dezember 2025 = 20251201.jpg");
+    println!(
+        "In welchem Ordner liegen die Impulse?
+Format: JJJJMMDD.jpg --> 01. Dezember 2025 = 20251201.jpg"
+    );
     io::stdin()
         .read_line(&mut dir)
         .expect("Diesen Ordner kenne ich nicht!");

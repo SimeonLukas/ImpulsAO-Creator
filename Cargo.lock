@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "ImpulsAO-Creator"
+name = "Impuls_ao_Creator"
 version = "0.1.0"
 dependencies = [
  "image",
@@ -274,9 +274,9 @@ dependencies = [
 
 [[package]]
 name = "image_compressor"
-version = "1.2.2"
+version = "1.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f7c7a4b1af7ac7ed648983528ddad8be53bf8d97dd67cca1e411212d62a941f"
+checksum = "857fa92e17c59b5ecd2ed1eb6ab1a7c9a8b544d3747015d87f871aba63067e49"
 dependencies = [
  "crossbeam-queue",
  "image",
