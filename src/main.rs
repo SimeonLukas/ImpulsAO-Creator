@@ -131,7 +131,7 @@ fn converter() {
             } else {
                 let img = image::open(filepath).unwrap();
                 let (width, height) = img.dimensions();
-                let img = resize(&img, width, height, Nearest);
+                let img = resize(&img, width * 2000 / height, 2000, Nearest);
                 let impuls_file = format!("output/impuls/{basename}.jpg");
                 img.save(impuls_file);
 
