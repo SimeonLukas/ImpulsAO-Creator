@@ -120,6 +120,14 @@ fn converter() {
                 .contains("team")
             {
                 let description_text = format!("<h1>{theme}</h1> <p lang=\"de\">Wenn wir morgens aufwachen, dann sind wir schon mitten drin in unserem Alltag. Gewohntes, Stressiges, Überraschendes, Angenehmes und Vieles mehr warten auf uns. Doch oft bleibt nicht immer die Zeit, darin das Schöne und Herausfordernde wahrzunehmen. Aus diesem Grund wollen wir mit unserem Impulskalender unserem Alltag ein bischen mehr Zeit geben. Zweimal im Jahr gestaltet das Impulskalenderteam kurze Texte, die den Alltag unter einem neuen Blick zeigen: Einmal vom 1. Advent bis zum Ende der Weihnachtszeit, und einmal durch die Fastenzeit bis Ostern. Daher kommt auch das „AO“ im Namen der Homepage: Advent und Ostern, von Anfang bis Ende. Die Impulse verschicken wir per Email oder via Smartphone App. Wir freuen uns auf Sie. Ihr Impulskalenderteam</p><p> Falls Ihnen die App gefällt, dann können Sie sie gerne <a href='#' onclick='window.plugins.socialsharing.share(`Diese App möchte ich gerne mit Dir teilen: ImpulsAO für IOS & Android https://onelink.to/4y2ff5`, null, null, null);' >teilen.</a></p>");
+                
+                let img = image::open(filepath).unwrap();
+                let (width, height) = img.dimensions();
+                let img = resize(&img, width * 2000 / height, 2000, Nearest);
+                let impuls_file = format!("output/impuls/{basename}.jpg");
+                img.save(impuls_file);
+                
+                
                 let description = Description {
                     date: String::from("00000000"),
                     r#type: String::from("description"),
@@ -127,6 +135,7 @@ fn converter() {
                     team: basename,
                 };
                 vecextra.push(description);
+               
                 println!("Beschreibung wurde geschrieben!");
             } else {
                 let img = image::open(filepath).unwrap();
