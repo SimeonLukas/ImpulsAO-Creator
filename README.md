@@ -2,7 +2,7 @@
 
 Aufbereitungstool für die ImpulsAO-APP und deren Server.
 Die Impulse werden damit automatisch in ein .json Format übertragen und passend für die App komprimiert.
-Die generierten Dateien finden sich dann im outout Ordner.
+Die generierten Dateien finden sich dann im output Ordner.
 Zur Aufbereitung benötigst du alle Impulse in einem Ordner.
 
 Bitte benenne den Ordner je nach Jahr (Beispiel: 2022) und der Kalendernummer des Jahres (01 Fastenzeit bzw. 02 Advent).
